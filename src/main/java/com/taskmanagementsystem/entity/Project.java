@@ -11,7 +11,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="project")
@@ -23,7 +22,6 @@ public class Project {
 	
 	
 	@Column(name="ProjectName")
-	@NotBlank(message = "Task Name is mandatory")
 	private String projectName;
 	
 	@Column(name="Description")
@@ -48,7 +46,7 @@ public class Project {
 	public Project() {}
 	
 
-	public Project(int projectId, @NotBlank(message = "Task Name is mandatory") String projectName, String description,
+	public Project(int projectId, String projectName, String description,
 			Date startDate, Date endDate, User user) {
 		
 		this.projectId = projectId;

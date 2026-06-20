@@ -22,12 +22,10 @@ import com.taskmanagementsystem.dto.UserProjection;
 import com.taskmanagementsystem.entity.User;
 import com.taskmanagementsystem.service.UserService;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
+
 
 @CrossOrigin(origins = {"http://localhost:4200"})  /*my server is allowing this domain to access it's resources*/
 @RestController /*@Controller + @ResponseBody*/
-@Tag(name = "User Controller", description = "Handles user-related operations")
 @RequestMapping("/api/users")     /*It will handle HTTP requests*/
 public class UserController {
 
@@ -45,10 +43,7 @@ public class UserController {
 		return new ResponseEntity<>(userService.createNewUser(user), HttpStatus.CREATED);    /*ResponseEntity includes status code , headers and body*/
 	}
 	
-	@Operation(
-		    summary = "Get all users",
-		    description = "Fetch a list of all registered users"
-		)
+
 	@GetMapping(value = "/all")     /*http://localhost:8091/api/users/all*/
 	public ResponseEntity<List<UserProjection>> getListOfAllUsers() {
 		List<UserProjection> users = userService.getListOfAllUsers();

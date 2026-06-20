@@ -62,13 +62,7 @@ public class GlobalExceptionHandler {
 	        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
 	 }
 	 
-	 @ExceptionHandler(UserRoleOperationException.class)
-	 public ResponseEntity<Map<String,String>> handleUserRoleOperationException(UserRoleOperationException ex){
-		 Map<String, String> errorResponse = new LinkedHashMap<>();
-	        errorResponse.put("code", ex.getCode());
-	        errorResponse.put("message", ex.getMessage());
-	        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
-	 }
+
 	 
 	 
 	 @ExceptionHandler(AttachmentOperationException.class)
@@ -88,11 +82,4 @@ public class GlobalExceptionHandler {
 	 }
 	 
 	
-	 @ExceptionHandler( UserRolesOperationException.class)
-	 public ResponseEntity<Map<String,String>> handleUserRolesOperationException( UserRolesOperationException ex){
-		 Map<String, String> errorResponse = new LinkedHashMap<>();
-	        errorResponse.put("code", ex.getCode());
-	        errorResponse.put("message", ex.getMessage());
-	        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
-	 }
 }

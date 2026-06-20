@@ -16,10 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.taskmanagementsystem.dto.ProjectProjection;
 import com.taskmanagementsystem.entity.Project;
 import com.taskmanagementsystem.entity.User;
-import com.taskmanagementsystem.entity.UserRoles;
 import com.taskmanagementsystem.exception.ProjectOperationException;
 import com.taskmanagementsystem.repository.ProjectRepository;
-import com.taskmanagementsystem.repository.UserRolesRepository;
 
 @Service
 public class ProjectService {
